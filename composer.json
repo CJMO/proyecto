@@ -4,7 +4,7 @@
 	"type": "project",
 	"repositories": [
         {
-			"name": "proyecto",
+	   "name": "proyecto",
             "url": "https://github.com/CJMO/proyecto.git",
             "type": "vcs"
         }

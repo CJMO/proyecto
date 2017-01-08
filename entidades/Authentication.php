@@ -39,6 +39,7 @@ class Authentication{
     }
 
     private function setHashKey($tranKey){
+		/* Generar datos adicionales para el acceso */
         return sha1($this->seed . $tranKey, false);
     }
 }

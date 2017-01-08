@@ -22,6 +22,8 @@
 
 	$usar_servicio = 0; // 0: datos de prueba local; 1: servicio web
 	
+	print "Inicio de la transacción<BR>";
+	
 	/* Script con instrucciones para generación de transacción: PSETransactionRequest */
 	require_once("crear_transaccion.php");
 	
@@ -29,6 +31,5 @@
 	require_once("respuesta_transaccion.php");
 	
 	/* Script con instrucciones para procesar el estado de transacción luego de ingresar a pasarela de pagos del banco: TransactionInformation */
-	require_once("informacion_transaccion.php");
-	
+	require_once("informacion_transaccion.php");	
 ?>

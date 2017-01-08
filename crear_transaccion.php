@@ -21,14 +21,14 @@
 	$gestor_transaccion->add_payer($payer);
 	if( $buyer->getDocument() === $payer->getDocument() ):
 		if($buyer->getDocumenttype() === $payer->getDocumenttype()):
-			print "Mismo pagador y comprador<BR>";
+			print "Mismo pagador y comprador para el producto<BR>";
 			$gestor_transaccion->add_buyer(null);
 		else:			
-			print "Diferente pagador y comprador<BR>";
+			print "Diferente pagador y comprador para el producto<BR>";
 			$gestor_transaccion->add_buyer($buyer);
 		endif;
 	else:
-		print "Diferente pagador y comprador<BR>";
+		print "Diferente pagador y comprador para el producto<BR>";
 		$gestor_transaccion->add_buyer($buyer);
 	endif;
 	
@@ -62,8 +62,7 @@
 	$datos_transaccion["taxAmount"] = $impuesto;
 	$datos_transaccion["devolutionBase"] = $base_devolucion;
 	$datos_transaccion["tipAmount"] = $propina;
-	
-	
+		
 	/* Asignar datos adicionales */
 	$ip = $_SERVER['REMOTE_ADDR'];
 	$agente_navegador = $_SERVER['HTTP_USER_AGENT'];
@@ -82,29 +81,5 @@
 	$PseTransactionRequest = $gestor_transaccion->getPseTransactionRequest();
 	
 	/* Generar transacción */
-	$respuesta = $servicios->generar_transaccion($PseTransactionRequest, $usar_servicio);
-	
-	
-	/*require_once("entidades/Authentication.php");
-	$auth = new Authentication('6dd490faf9cb87a9862245da41170ff2', '024h1IlD', null);
-	 
-	$params = ['auth' => $auth];
-	$client = new SoapClient("https://test.placetopay.com/soap/pse?wsdl");
-	$response = array();
-	$response = $client->__soapCall('getBankList', array($params));
-	return;
-	
-	//$datos_transaccion["bankInterface"] = $interfaz_lista_bancos;
-	//$datos_transaccion["bankCode"] = $codigo_banco;
-	//$datos_transaccion["language"] = $idioma;
-	//$datos_transaccion["currency"] = $tipo_moneda;
-	
-	// inicialiar curl para obtener ciudad de compra, por medio de IP        
-	$ch = curl_init();
-	$opciones_curl = array( CURLOPT_URL => "http://ipinfo.io/".$ip."/city", CURLOPT_RETURNTRANSFER => true );
-	curl_setopt_array($ch, $opciones_curl);
-	// obtener respuesta al ejecutar consulta
-	$ciudad_ip = (curl_exec($ch));
-	$ciudad_ip = trim( $ciudad_ip );
-	*/
+	$respuesta = $servicios->generar_transaccion($PseTransactionRequest, $usar_servicio);	
 ?>

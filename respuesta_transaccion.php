@@ -31,8 +31,7 @@
 		require "bootstrap.php";
 		// guardar en BD	
 		$entityManager->persist($PseTransactionResponse);
-		$entityManager->flush();
-				
+		$entityManager->flush();				
 	
 		/* Luego de obtener los datos, se procede a realizar la redirección a la URL de la pasarela de pagos del banco en mención, se obvia el proceso para efectos de esta prueba */
 		$URL = $PseTransactionResponse->getBankurl();
@@ -44,27 +43,4 @@
 		print "Se ha producido un error al procesar su transacción: {$mensaje_error} Por favor inténtelo más tarde<BR>";
 	
 	endif;
-	
-	/*
-	db4free.net
-	prueba_servicio
-	cjmo
-	cjmo_prueba
-	
-	Base de datos: prueba_servicio
-	Nombre de usuario: cjmo
-	Correo electrónico: cristian.m.u@hotmail.com
-	
-	https://www.freemysqlhosting.net/
-	cristian.m.u@hotmail.com
-	cjmo_prueba
-	
-	Server: sql10.freemysqlhosting.net
-	Name: sql10152784
-	Username: sql10152784
-	Password: Mr4fuk5nCr
-	Port number: 3306
-	
-	*/
-
 ?>

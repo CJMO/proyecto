@@ -19,16 +19,6 @@
 	$usuario = '6dd490faf9cb87a9862245da41170ff2';
 	$clave = '024h1IlD';
 	$opciones_ad = null;
-	
-$login = "6dd490faf9cb87a9862245da41170ff2";
-$tranKey = "024h1IlD";
-$seed = date('c');
-$hashString = sha1( $seed. $tranKey , false );
-	
-$proxy = new SoapClient('https://test.placetopay.com/soap/pse?wsdl'); 
-$sessionId = $proxy->getBankList($login, $hashString, $seed );
-
-return;	
 
 	$usar_servicio = 0; // 0: datos de prueba local; 1: servicio web
 	

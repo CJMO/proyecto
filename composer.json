@@ -1,8 +1,10 @@
 {
-    "require": {
-        "doctrine/orm": "*"
-    },
-	"autoload": {
-		"psr-0": {"": "entidades/BD/"}
-	}
+  "name": "CJMO/proyecto",
+  "description": "Paquete con archivos fuente de proyecto para uso de servicios web",
+  "authors": [
+    {
+      "name": "Cristian José Muñoz Oliveros",
+      "email": "cristian.m.u@hotmail.com"
+    }
+  ]
 }
